@@ -11,7 +11,8 @@ async function getResults(query) {
         alert(error);
     }
 }
-    
+  
+
 getResults('tomato pasta');
 
 
