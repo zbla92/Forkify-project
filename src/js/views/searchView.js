@@ -1,11 +1,9 @@
 import { elements } from './base';
 
 export const getInput = () => elements.searchInput.value;
-
 export const clearInput = () => {
     elements.searchInput.value = '';
 }
-
 export const clearResults = () => {
     elements.searchResList.innerHTML = '';
 };
@@ -43,6 +41,9 @@ const renderRecipe = recipe => {
                 elements.searchResList.insertAdjacentHTML('beforeend', markup);
 }
 
-export const renderResults = recipes => {
-    recipes.forEach(renderRecipe);
+export const renderResults = (recipes, page = 1, resPerPage = 10) => {
+    const start = (page - 0) * resPerPage;
+    const end = page * resPerPage;
+
+    recipes.slice(start, end).forEach(renderRecipe);
 }
