@@ -84,6 +84,7 @@ const controlRecipe = async () => {
         try {
         // Get recipe data and parse ingredients
         await state.recipe.getRecipe();
+        console.log(state.recipe.ingredients);
         state.recipe.parseIngredients();
 
         // Calculate servings and cook time
@@ -102,3 +103,17 @@ const controlRecipe = async () => {
 //window.addEventListener('hashchange', controlRecipe); ove dve linije su 
 //window.addEventListener('load', controlRecipe);
 ['hashchange', 'load'].forEach(event => window.addEventListener(event, controlRecipe));   // OVA LINIJA
+
+
+// Handling recipe button clicks
+elements.recipe.addEventListener('click', e => {
+    console.log(e.target)
+    if (e.target.matches('.btn-decrease, .btn-decrease *')) {
+        // Decrease button is clicked
+        state.recipe.updateServings('dec');
+    } else if (e.target.matches('.btn-increase, .btn-increase *')) {
+        // Increase button is clicked1
+        state.recipe.updateServings('inc');
+        console.log(state.recipe);
+    }
+})
