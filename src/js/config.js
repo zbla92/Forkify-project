@@ -1,4 +1,4 @@
-export const key = '08936ce0201798ce74fca37f1e017de8';
+export const key = '4fe8e6d4cf18c9028fc403fc23a705dc';
 export const proxy = 'https://cors-anywhere.herokuapp.com/';
 
 // Key for milanblaz@live.com : 08936ce0201798ce74fca37f1e017de8
